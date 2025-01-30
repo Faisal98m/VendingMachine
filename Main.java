@@ -33,8 +33,12 @@ public class Main{
         // verify payments
         // verify stock
         // fetch items
-        
 
+
+        Items item = new Items("Fanta", 2, 3.50 );
+
+
+        System.out.println(item.toString());
 
 
     }

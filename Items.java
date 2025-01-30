@@ -1,22 +1,87 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
+
 public class Items {
     
-    //Item name, stock level, price
-    //The name can be associated with a key so a hashmap could work well here
-    // Hashmap<String, int> item;
+    /*Today we'll work on the items themselves
 
-    // int stockLevel: max 8, min 0
+    //Class Responsibility: Create a class for an item
+    //This class can then be used in a slot in the vending machine
+    //We have to first create a class for an item
+    //Then we have to populate another class with this item
 
 
-    //double price: price of each item in £
+    /How would we use this class?
+    /We will call the Item class
+    //Item fanta = new Item(<"Fanta", 1 >, null, 1.50 )
+
+    VendingMachine(row(1).column(1)).add(Fanta)
+    VendingMachine(row(1).column(2)).add(7up)
+    VendingMachine(row(1).column(3)).add(Coca)
+    VendingMachine(row(1).column(4)).add(Pepsi)
+    VendingMachine(row(2).column(1)).add(Sensations)
+    VendingMachine(row(3).column(2)).add(Snickers)
+    VendingMachine(row(4).column(3)).add(Pringles)
     
-    //We will need to add the items to this class too
-    //This is so that we can populate our vending machine
+
+    Properties:
+     ->Name
+     ->Key: 
+        -This will be automatically generated for every item
+
+     ->Stock level
+     ->Price
+
+     */
 
 
+     private String name;
+     private Integer id;
+     private Integer stockLevel;
+     private Double price;
+
+     public Items(String name, Integer id, double price){
+        this.name = name;
+        this.id = id;
+        this.stockLevel = 8;
+        this.price = price;
+     }
 
 
+     public String getName(){
+        return this.name;
+     }
+
+     public int getId(){
+        return this.id;
+     }
+
+     public int getStock(){
+        return this.stockLevel;
+     }
 
 
+     public double getPrice(){
+        return this.price;
+     }
 
+
+     public String toString(){
+
+        StringBuilder result = new StringBuilder();
+
+        result.append(this.getName())
+            .append(", Id:")
+            .append(getId())
+            .append(", In Stock: ")
+            .append(getStock())
+            .append(", Price: £")
+            .append(getPrice());
+
+        return result.toString();
+     }
+
+     
 
 }
