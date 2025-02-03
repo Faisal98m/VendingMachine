@@ -36,10 +36,9 @@ public class Main{
 
 
         Items item = new Items("Fanta", 2, 3.50 );
-
-
-        System.out.println(item.toString());
-
+        VendingMachine vendingMachine = new VendingMachine();
+        
+        System.out.println(vendingMachine.toString());
 
     }
 }

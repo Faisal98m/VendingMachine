@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
-
 public class Items {
     
     /*Today we'll work on the items themselves
@@ -72,7 +68,7 @@ public class Items {
         StringBuilder result = new StringBuilder();
 
         result.append(this.getName())
-            .append(", Id:")
+            .append(", ID:")
             .append(getId())
             .append(", In Stock: ")
             .append(getStock())
