@@ -44,7 +44,9 @@ public class Items {
         this.price = price;
      }
 
-
+     public Items(){
+        
+     }
      public String getName(){
         return this.name;
      }
@@ -55,6 +57,16 @@ public class Items {
 
      public int getStock(){
         return this.stockLevel;
+     }
+
+     public int reduceStock(int quantity){
+
+        if(quantity <= 0){
+            return 0;
+        }
+
+        return this.stockLevel -quantity;
+
      }
 
 

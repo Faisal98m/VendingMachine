@@ -40,5 +40,7 @@ public class Main{
         
         System.out.println(vendingMachine.toString());
 
+        System.out.println(vendingMachine.geSlot(3).getItem());
+
     }
 }

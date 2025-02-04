@@ -57,6 +57,20 @@ public class VendingMachine {
      * 
      */
 
+    //Need to create a getter for this class so that we're able to extract the grid and run operations on it
+
+    public Slot getSlot(int itemId){
+
+        for(int row = 0; row < grid.length; row++){
+            for(int col = 0; col < grid[row].length; col++){
+                if(itemId == grid[row][col].getItem().getId() ){
+                    return grid[row][col];
+                }
+            }
+        }
+
+        return null;
+    }
 
      public String toString(){
 
@@ -87,6 +101,15 @@ public class VendingMachine {
      }
 
 
+     /*Do we update the stock here?
+      
+        
+
+
+      * 
+
+
+      */
 
 
 }
