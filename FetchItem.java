@@ -1,30 +1,7 @@
 public class FetchItem {
     
-
-    /*We want to update the vending machine in this class
-     * Once the payment is verified
-     * This class will then hold the responsibility of reducing the stock from vending machine
-     * We can also use this class to verify if an item is in stock
-     * 
-     * 
-     * 
-     * 
-     * 
-     * Is the payment verified ---> update stock
-     * 
-     * if(verifiedPayment){
-     *  
-     *  slot.getStock - quantity
-     * }
-     * 
-     * 
-     * Then we would need to update the stock in our vending machine class.
-     * 
-     * I think the updating stock and verifying payments should all be one class
-     */
-
-     private int inputId;
-     private int inputQuantity;
+     private final int inputId;
+     private final int inputQuantity;
      private double amount;
      private VendingMachine vendingMachine;
 
@@ -38,10 +15,13 @@ public class FetchItem {
 
      public Boolean doesItemExist(int id){
 
-      Boolean exists = false;
+      Boolean exists = false;//Boolean flag
 
+      //Bring in the slot class and get slot id 
       Slot slot = this.vendingMachine.getSlot(id);
+      
 
+      //
       if(slot == null){
         return false;
       }
@@ -51,6 +31,7 @@ public class FetchItem {
       }
 
       if(slot.getItem().getStock() <= 0){
+        System.out.println("No more stock of this item");
         return false;
       }
 
@@ -65,7 +46,7 @@ public class FetchItem {
 
      public double isPayVerified(double userPay, int id, int quantity){
 
-        double change = 0;
+        double change;
 
         Slot slot = this.vendingMachine.getSlot(id);
         
@@ -99,6 +80,37 @@ public class FetchItem {
      }
 
 
+
+     /*Method for giving user their item*/
+     
+     public String toString(){
+        Slot slot = this.vendingMachine.getSlot(this.inputId);
+        StringBuilder result = new StringBuilder();
+        
+
+        if(slot == null){
+            return "Empty";
+          }
+
+        if(slot.getItem() == null){
+            return "Empty";
+          }
+
+    
+        if(this.inputId == slot.getItem().getId()){
+
+            result.append("Here is your item: ")
+            .append(slot.getItem().getName())
+            .append("\nHere is your change: ")
+            .append(isPayVerified(amount, inputId, inputQuantity));
+
+        }
+    
+        
+
+        return result.toString();
+
+     }
 
 
 }

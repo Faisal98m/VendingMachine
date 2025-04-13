@@ -1,0 +1,61 @@
+
+Vending Machine
+
+
+
+We've modularized the vending machine into separate classes
+
+-Item
+-Slot
+-FetchItem
+-Vending Machine
+
+##Item
+-Defining our items with it's properties
+    -Name
+    -ID
+    -Price
+    -Stock Level
+-Creating getters for each property so we can use in other classes
+-ToString to print out each item using the getters
+-ReduceStock function to reduce stock levels of an item when it's fetched
+    -Might need it's own class later on
+
+##Slot
+-Define properties
+    -Item Class
+    -Price
+-Getters for each slot
+
+##Vending Machine
+-Create the grid for the vending machine
+    -In our case it will be a 4x4 grid
+        -Using 2D array(
+    -Manually add an item using the Slot class into our grid
+        -Define each items name, price, id
+    
+-Create getters 
+    -getSlot 
+        -We'll use a nested loop to go through each row and colummn
+        -If the item id given by user matches the id of the slot
+        -return the item from the slot  
+    
+    public Slot getItem(item){
+        for(int row = 0; row < grid.length: row++){
+            for (int col = 0; col < grid[row].length; col++){
+                if(item == grid[row][col].getItem().getId())){
+                    return grid[row][col]
+                    }
+                }
+            }
+    
+    }
+
+-ToString method 
+    -Print out each item 
+
+##FetchItem
+
+-inputID -> User inputs id of item
+-inputQuantity -> Quantity of item user wants
+-amount

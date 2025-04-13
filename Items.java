@@ -65,8 +65,8 @@ public class Items {
             return 0;
         }
 
-        return this.stockLevel -quantity;
-
+        return this.stockLevel - quantity;
+ 
      }
 
 
