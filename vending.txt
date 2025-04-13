@@ -56,6 +56,14 @@ We've modularized the vending machine into separate classes
 
 ##FetchItem
 
--inputID -> User inputs id of item
--inputQuantity -> Quantity of item user wants
--amount
+-This is the hand of the machine. Grabs items from vending machine
+
+-Backend checks
+
+    -Does the item exist?
+        -
+    -Is the pay correct?
+        -Does user have enough money
+        -Do we have enough stock
+        -Other edge cases
+        -Works out correct change

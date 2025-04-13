@@ -7,7 +7,7 @@ public class VendingMachine {
     }
 
     public Slot getSlot(int itemId) {
-        Slot[][] slots = grid.getGrid();  // this calls Grid's getGrid() method
+        Slot[][] slots = grid.getGrid();  
 
         for (int row = 0; row < slots.length; row++) {
             for (int col = 0; col < slots[row].length; col++) {
@@ -19,4 +19,21 @@ public class VendingMachine {
 
         return null;
     }
+
+    public int findItemIdByName(String name){
+        Slot[][] slots  = grid.getGrid();
+        
+        for(int row = 0; row < slots.length; row++){
+            for(int col = 0; col < slots[row].length; col++){
+                Items item = slots[row][col].getItem();
+                if(item.getName().equalsIgnoreCase(name)){
+                    return item.getId();
+                }
+            }   
+        }
+        return -1;
+        
+    }
+
+    
 }

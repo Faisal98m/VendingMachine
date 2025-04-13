@@ -1,24 +1,24 @@
+
+import java.util.Scanner;
+
 public class Main{
 
 
     public static void main(String[] args){
 
+        Scanner scan = new Scanner(System.in);
 
         Grid grid = new Grid();
         VendingMachine vendingMachine = new VendingMachine();
-        FetchItem fetch = new FetchItem(3, 2, 20, vendingMachine);
-        //We're calling the vending machine class, which  has the Grid class in it
-        //fetch the wanted item. FetchItem wants id, quantity, amount and vending machine
+        System.out.println("Menu: ");
+        System.out.println(grid);
+        System.out.println("Please choose an item: ");
+        String itemName = scan.nextLine();
 
-        
-        
-        System.out.println(grid.toString());
-
-
-        System.out.println(vendingMachine.getSlot(3).getItem());
+        FetchItem fetch = new FetchItem(itemName, 2, 20, vendingMachine);
 
         System.out.println(fetch.toString());
         
 
     }
-}
+} 

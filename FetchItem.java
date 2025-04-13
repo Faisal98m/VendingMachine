@@ -1,12 +1,12 @@
 public class FetchItem {
     
-     private final int inputId;
+     private final String name;
      private final int inputQuantity;
-     private double amount;
-     private VendingMachine vendingMachine;
+     private final double amount;
+     private final VendingMachine vendingMachine;
 
-     public FetchItem(int id, int quantity, double amount, VendingMachine vendingMachine){
-        this.inputId = id;
+     public FetchItem(String name, int quantity, double amount, VendingMachine vendingMachine){
+        this.name = name;
         this.inputQuantity = quantity;
         this.amount = amount;
         this.vendingMachine = vendingMachine;
@@ -84,25 +84,27 @@ public class FetchItem {
      /*Method for giving user their item*/
      
      public String toString(){
-        Slot slot = this.vendingMachine.getSlot(this.inputId);
+        int slot = this.vendingMachine.findItemIdByName(this.name);
         StringBuilder result = new StringBuilder();
+        Integer itemId = vendingMachine.findItemIdByName(this.name);
+
         
 
-        if(slot == null){
+        if(itemId == 0){
             return "Empty";
           }
 
-        if(slot.getItem() == null){
+        if(itemId == 0){
             return "Empty";
           }
 
     
-        if(this.inputId == slot.getItem().getId()){
+        if(itemId == vendingMachine.findItemIdByName(this.name)){
 
             result.append("Here is your item: ")
-            .append(slot.getItem().getName())
+            .append(this.name)
             .append("\nHere is your change: ")
-            .append(isPayVerified(amount, inputId, inputQuantity));
+            .append(isPayVerified(amount, itemId, inputQuantity));
 
         }
     
