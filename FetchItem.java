@@ -71,11 +71,12 @@ public class FetchItem {
         if(userPay >= totalAmount){
             change = userPay- totalAmount;
         }else{
+            System.out.println("Not enough money!");
             return 0;
         }
 
         
-        return change;
+        return Math.round(change);
 
      }
 

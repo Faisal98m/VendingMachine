@@ -2,7 +2,7 @@ public class VendingMachine {
 
     private Grid grid;
 
-    public VendingMachine() {
+    public VendingMachine(Grid grid) {
         this.grid = new Grid();
     }
 
